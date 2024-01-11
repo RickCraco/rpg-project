@@ -4,14 +4,24 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Character;
 
 class CharacterSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
-        //
+        for($i = 0; $i < 15; $i++) {
+            $character = new Character();
+            $character->name = $faker->name();
+            $character->description = $faker->paragraph();
+            $character->attack = $faker->numberBetween(1, 20);
+            $character->defence = $faker->numberBetween(1, 20);
+            $character->life = $faker->numberBetween(1, 100);
+            $character->speed = $faker->numberBetween(1, 20);
+            $character->save();
+        }
     }
 }
