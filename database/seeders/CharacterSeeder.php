@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
+use Faker\Generator as Faker;
 
 class CharacterSeeder extends Seeder
 {
