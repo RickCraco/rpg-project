@@ -11,7 +11,7 @@ class StoreCharacterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>'required|min:3|max:200',
+            'description'=>'nullable|min:3|max:1000',
+            'attack'=>'required|integer',
+            'defense'=>'required|integer',
+            'life'=>'required|integer',
+            'speed'=>'required|integer',
         ];
     }
 }
