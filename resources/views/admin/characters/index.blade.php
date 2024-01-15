@@ -24,7 +24,11 @@
                                     <td class="text-center">{{ $item->updated_at }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.characters.edit', $item->id) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
-                                        <a href="{{ route('admin.characters.destroy', $item->id) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                        <form action="{{route('admin.characters.destroy', $item->id)}}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="cancel-button btn btn-danger" data-item-title="{{ $item->title }}"><i class="fa-solid fa-trash-can"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -34,5 +38,6 @@
             </div>
         </div>
     </section>
+@include('profile.partials.modal_delete')
 @endsection
 
