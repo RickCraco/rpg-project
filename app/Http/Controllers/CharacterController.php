@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Character;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CharacterController extends Controller
 {
@@ -31,6 +32,12 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formdata = $request->validated();
+
+        if($request->hasFile('image')) {
+            $path = Storage::put('images', $request->file('image'));
+            $formdata['image'] = $path;
+        }
+
         $newCharacter = Character::create($formdata);
         return to_route('admin.characters.index');
     }
@@ -57,6 +64,17 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formdata = $request->validated();
+
+        if($request->hasFile('image')) {
+
+            if($character->image) {
+                Storage::delete($character->image);
+            }
+
+            $path = Storage::put('images', $request->file('image'));
+            $formdata['image'] = $path;
+        }
+
         $character->fill($formdata);
         $character->update();
         return to_route('admin.characters.show', $character);
@@ -67,6 +85,10 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
+        if($character->image) {
+            Storage::delete($character->image);
+        }
+
         $character->delete();
         return to_route('admin.characters.index')->with('message', 'Character deleted');
     }
