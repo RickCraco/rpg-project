@@ -11,7 +11,7 @@
             </ul>
         </div>
         @endif
-        <form action="{{route('character.store', $character->id)}}" method="POST" class="p-3" enctype="multipart/form-data">
+        <form action="{{route('admin.character.store', $character->id)}}" method="POST" class="p-3" enctype="multipart/form-data">
             @csrf
                 <input type="text" id="name" name="name" placeholder="Name" class="form-control my-2" required>
                 <input type="text" id="description"  name="Description" placeholder="Description" class="form-control my-2">
