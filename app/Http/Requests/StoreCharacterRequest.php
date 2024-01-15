@@ -28,6 +28,7 @@ class StoreCharacterRequest extends FormRequest
             'defense'=>'required|integer',
             'life'=>'required|integer',
             'speed'=>'required|integer',
+            'image'=>'nullable|image',
         ];
     }
 }
