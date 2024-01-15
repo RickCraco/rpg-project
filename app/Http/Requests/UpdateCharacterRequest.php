@@ -25,7 +25,7 @@ class UpdateCharacterRequest extends FormRequest
             'name'=>'required|min:3|max:200',
             'description'=>'nullable|min:3|max:1000',
             'attack'=>'required|integer',
-            'defense'=>'required|integer',
+            'defence'=>'required|integer',
             'life'=>'required|integer',
             'speed'=>'required|integer',
             'image'=>'nullable|image',
