@@ -107,7 +107,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a class="btn btn-primary fs-3" href="{{ route('characters.show', $item) }}" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); ">Vedi Dettagli</a>
+                                    <a class="btn btn-primary fs-3" href="{{ route('admin.characters.show', $item) }}" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); ">Vedi Dettagli</a>
                                 </div>
                             </div>
                         </div>
