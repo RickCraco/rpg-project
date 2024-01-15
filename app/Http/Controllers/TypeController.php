@@ -14,7 +14,7 @@ class TypeController extends Controller
     public function index()
     {
         $types = Type::all();
-        return view('types.index', compact('types'));
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -22,7 +22,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('types.create');
+        return view('admin.types.create');
     }
 
     /**
@@ -32,7 +32,7 @@ class TypeController extends Controller
     {
         $formdata = $request->validated();
         $newType = Type::create($formdata);
-        return to_route('types.index');
+        return to_route('admin.types.index');
     }
 
     /**
@@ -40,7 +40,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        return view('types.show', compact('type'));
+        return view('admin.types.show', compact('type'));
     }
 
     /**
@@ -48,7 +48,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        return view('types.edit', compact('type'));
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
@@ -58,7 +58,7 @@ class TypeController extends Controller
     {
         $formdata = $request->validated();
         $type->update($formdata);
-        return to_route('types.show', $type);
+        return to_route('admin.types.show', $type);
     }
 
     /**
@@ -67,6 +67,6 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
         $type->delete();
-        return to_route('types.index');
+        return to_route('admin.types.index');
     }
 }
