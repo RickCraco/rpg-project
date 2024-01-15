@@ -15,7 +15,7 @@
             @csrf
             @method('PUT')
                 <input type="text" id="name" value="{{old('name', $character->name)}}" name="name" placeholder="Name" class="form-control my-2">
-                <input type="text" id="description" value="{{old('description', $character->description)}}" name="Description" placeholder="Description" class="form-control my-2">
+                <input type="text" id="description" value="{{old('description', $character->description)}}" name="description" placeholder="Description" class="form-control my-2">
                 <input type="text" id="attack" value="{{old('attack', $character->attack)}}" name="attack" placeholder="Attack" class="form-control my-2">
                 <input type="text" id="defence" value="{{old('defence', $character->defence)}}" name="defence" placeholder="Defense" class="form-control my-2">
                 <input type="text" id="life" name="life" value="{{old('life', $character->life)}}" placeholder="HP" class="form-control my-2">
