@@ -24,6 +24,7 @@
                                     <td class="text-center">{{ $item->updated_at }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.characters.edit', $item->id) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
+                                        <a href="{{ route('admin.characters.show', $item->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
                                         <form action="{{route('admin.characters.destroy', $item->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')

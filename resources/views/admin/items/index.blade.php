@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <section style="background-size: cover; background-repeat: no-repeat;">
-        <div class="w-100 bg-dark vh-100">
+        <div class="w-100 bg-dark h-100">
             <h1 class="text-white text-center py-4">Character List</h1>
-            <div class="container ">
+            <div class="container">
                 <div class="row">
                     <table class="table table-striped">
                         <thead>
@@ -24,6 +24,7 @@
                                     <td class="text-center">{{ $item->updated_at }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.items.edit', $item->id) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
+                                        <a href="{{ route('admin.items.show', $item->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
                                         <form action="{{route('admin.items.destroy', $item->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
