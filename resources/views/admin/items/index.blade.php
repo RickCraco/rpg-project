@@ -3,6 +3,9 @@
     <section style="background-size: cover; background-repeat: no-repeat;">
         <div class="w-100 bg-dark h-100">
             <h1 class="text-white text-center py-4">Items List</h1>
+            <div class="d-flex justify-content-center pb-4">
+                <a href="{{ route('admin.items.create') }}" class="btn btn-primary fs-4">Add item</a>
+            </div>
             <div class="container">
                 <div class="row">
                     <table class="table table-striped">
