@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header bg-dark text-white">{{ __('Register') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-dark-subtle">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -18,6 +18,20 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="nickname" class="col-md-4 col-form-label text-md-right">{{ __('Nickname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nickname" type="text" class="form-control @error('nickname') is-invalid @enderror" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
+
+                                @error('nickname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -63,7 +77,7 @@
 
                         <div class="mb-4 row">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>

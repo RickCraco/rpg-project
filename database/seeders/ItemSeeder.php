@@ -27,4 +27,15 @@ class ItemSeeder extends Seeder
             $item->save();
         }
     }
+
+    public static function storeimage($img, $name)
+    {
+        $myurl = $img;
+        $contents = file_get_contents($myurl);
+
+        $name = Str::slug($name, '-') . '.jpg';
+        $path = 'images/' . $name;
+        Storage::put('images/' . $name, $contents);
+        return $path;
+    }
 }
