@@ -1,7 +1,7 @@
 <header class="bg-black py-2 text-white w-100" style="height: 100px; position: fixed; top: 0; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);">
     <div class="d-flex justify-content-between px-3 align-items-center">
         <div class="d-flex align-items-center gap-3">
-            <img class="rounded-circle d-none d-md-flex" style="height: 80px; width: 80px;" src="{{ asset('storage/images/logo.png') }}" alt="logo">
+            <a href="{{ route('home') }}"><img class="rounded-circle d-none d-md-flex" style="height: 90px; width: 90px;" src="{{ asset('storage/images/logo.png') }}" alt="logo"></a>
         </div>
         <div>
             <form action="" class="d-flex gap-2">
