@@ -9,13 +9,12 @@
                     <img src="{{ asset('storage/' . $item->image) }}" alt="{{$item->name}}" class="card-img-top">
                     <div class="card-body">
                         <p class="card-text">{{$item->description}}</p>
-                        <div>
-                            <h2 class="fw-bold">Statistics</h2>
-                            <h5>Category: {{ $item->category }}</h5>
-                            <h5>Weight: {{ $item->weight }}</h5>
-                            <h5>Cost: {{ $item->cost }}</h5>
-                        </div>
-
+                        <h2 class="fw-bold">Statistics</h2>
+                        <ul style="list-style: none" class="p-0">
+                            <li>Category: {{ $item->category }}</li>
+                            <li>Weight: {{ $item->weight }}</li>
+                            <li>Cost: {{ $item->cost }}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
