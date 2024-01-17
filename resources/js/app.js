@@ -12,36 +12,26 @@ buttons.forEach((button) =>
         event.preventDefault();
 
         //! prendo il titolo dell'item dal bottone
-        const dataTitle = button.getAttribute('data-ite-title');
+        const dataTitle = button.getAttribute('data-item-title');
         //! prendo l'elemento con la modale
         const modal = document.getElementById('deleteModal');
-       
+
         //! creo nuova modale di bootstrap
         const bootstrapModal = new bootstrap.Modal(modal);
-        
+
         //! mostro la modale con il metodo show
         bootstrapModal.show();
-        
+
         //! prendo l'elemento della modale dove voglio inserire il titolo
         const title = modal.querySelector('#modal-item-title');
-        
+
         //! inserisco il titolo della modale
         title.textContent = dataTitle;
-        
+
         //! prendo dalla modale il bottone di conferma
         const buttonDelete = modal.querySelector('.confirmbutton');
         buttonDelete.addEventListener('click', (event) => {
             button.parentElement.submit();
         });
     });
-});
-
-const previewImage = document.getElementById("image");
-previewImage.addEventListener("change", (event) => {
-    const ofReader = new FileReader();
-    ofReader.readAsDataURL(previewImage.files[0]);
-
-    ofReader.onload = function (oFREvent) {
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-    };
 });
