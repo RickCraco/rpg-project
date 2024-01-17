@@ -2,7 +2,7 @@
 @section('content')
     <section style="background-size: cover; background-repeat: no-repeat;">
         <div class="w-100 bg-dark h-100">
-            <h1 class="text-white text-center py-4">Character List</h1>
+            <h1 class="text-white text-center py-4">Items List</h1>
             <div class="container">
                 <div class="row">
                     <table class="table table-striped">
