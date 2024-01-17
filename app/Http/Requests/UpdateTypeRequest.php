@@ -23,7 +23,7 @@ class UpdateTypeRequest extends FormRequest
     {
         return [
             'name'=>'required|min:3|max:200',
-            'description'=>'nullable|min:3|max:1000',
+            'description'=>'nullable|min:3',
         ];
     }
 }

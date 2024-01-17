@@ -2,7 +2,10 @@
 @section('content')
     <section style="background-size: cover; background-repeat: no-repeat;">
         <div class="w-100 bg-dark vh-100">
-            <h1 class="text-white text-center py-4">Character List</h1>
+            <h1 class="text-white text-center py-4">Types List</h1>
+            <div class="d-flex justify-content-center pb-4">
+                <a href="{{ route('admin.types.create') }}" class="btn btn-primary fs-4">Add type</a>
+            </div>
             <div class="container ">
                 <div class="row">
                     <table class="table table-striped">
@@ -24,6 +27,7 @@
                                     <td class="text-center">{{ $item->updated_at }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.types.edit', $item->id) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
+                                        <a href="{{ route('admin.types.show', $item->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
                                         <form action="{{route('admin.types.destroy', $item->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
