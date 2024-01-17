@@ -9,14 +9,13 @@
                     <img src="{{ asset('storage/' . $character->image) }}" alt="{{$character->name}}" class="card-img-top">
                     <div class="card-body">
                         <p class="card-text">{{$character->description}}</p>
-                        <div>
-                            <h2 class="fw-bold">Statistics</h2>
-                            <h5>Attack: {{ $character->attack }}</h5>
-                            <h5>Defense: {{ $character->defence }}</h5>
-                            <h5>Health: {{ $character->life }}</h5>
-                            <h5>Speed: {{ $character->speed }}</h5>
-                        </div>
-
+                        <h2 class="fw-bold">Statistics</h2>
+                        <ul style="list-style: none" class="p-0">
+                            <li>Attack: {{ $character->attack }}</li>
+                            <li>Defense: {{ $character->defence }}</li>
+                            <li>Health: {{ $character->life }}</li>
+                            <li>Speed: {{ $character->speed }}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
