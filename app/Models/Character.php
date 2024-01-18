@@ -16,6 +16,11 @@ class Character extends Model
         'defence',
         'life',
         'speed',
-        'image'
+        'image',
+        'type_id'
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
