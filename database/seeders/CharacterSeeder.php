@@ -30,7 +30,7 @@ class CharacterSeeder extends Seeder
             $character->defence = $faker->numberBetween(1, 20);
             $character->life = $faker->numberBetween(1, 100);
             $character->speed = $faker->numberBetween(1, 20);
-            $character->type_id = $types->random(1)->id;
+            $character->type_id = $types->random()->id;
             $character->save();
             $character->items()->sync($items->random(3));
         }
