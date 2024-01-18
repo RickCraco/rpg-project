@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Character;
 use App\Models\Type;
 use App\Models\Item;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
 class CharacterSeeder extends Seeder
