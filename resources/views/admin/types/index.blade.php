@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section style="background-size: cover; background-repeat: no-repeat;">
-        <div class="w-100 bg-dark vh-100">
+        <div class="w-100 bg-dark h-100">
             <h1 class="text-white text-center py-4">Types List</h1>
             <div class="d-flex justify-content-center pb-4">
                 <a href="{{ route('admin.types.create') }}" class="btn btn-primary fs-4">Add type</a>
