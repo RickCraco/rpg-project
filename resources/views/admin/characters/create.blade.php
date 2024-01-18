@@ -68,7 +68,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                 </div>
-                <div class="mb-3 text-white">
+                <div class="mb-3">
                         @foreach ($items as $item)
                             <input type="checkbox" class="mx-2 @error('item') is-invalid @enderror" name="item[]" id="item" value="{{ $item->id }}" {{ in_array($item->id, old('item', [])) ? 'checked' : '' }}>
                             <label for="item">{{ $item->name }}</label>
