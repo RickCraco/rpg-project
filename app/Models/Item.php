@@ -18,4 +18,8 @@ class Item extends Model
         'cost',
         'image'
     ];
+
+    public function characters(){
+        return $this->belongsToMany(Character::class);
+    }
 }

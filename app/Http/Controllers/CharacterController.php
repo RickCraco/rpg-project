@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
+use App\Models\Item;
 
 class CharacterController extends Controller
 {
@@ -25,7 +26,8 @@ class CharacterController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.characters.create', compact('types'));
+        $items = Item::all();
+        return view('admin.characters.create', compact('types', 'items'));
     }
 
     /**
@@ -41,6 +43,11 @@ class CharacterController extends Controller
         }
 
         $newCharacter = Character::create($formdata);
+
+        if($request->items) {
+            $newCharacter->items()->attach($request->items);
+        }
+
         return to_route('admin.characters.index');
     }
 
@@ -58,7 +65,8 @@ class CharacterController extends Controller
     public function edit(Character $character)
     {
         $types = Type::all();
-        return view('admin.characters.edit', compact('character', 'types'));
+        $items = Item::all();
+        return view('admin.characters.edit', compact('character', 'types', 'items'));
     }
 
     /**
@@ -78,8 +86,15 @@ class CharacterController extends Controller
             $formdata['image'] = $path;
         }
 
-        $character->fill($formdata);
+        //$character->fill($formdata);
         $character->update();
+
+        if($request->has('items')) {
+            $character->items()->sync($request->items);
+        }else{
+            $character->items()->detach();
+        }
+
         return to_route('admin.characters.show', $character);
     }
 
@@ -91,6 +106,8 @@ class CharacterController extends Controller
         if($character->image) {
             Storage::delete($character->image);
         }
+
+        $character->items()->detach();
 
         $character->delete();
         return to_route('admin.characters.index')->with('message', 'Character deleted');
