@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Character;
 use App\Models\Type;
 use App\Models\Item;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
 class CharacterSeeder extends Seeder
@@ -28,7 +30,7 @@ class CharacterSeeder extends Seeder
             $character->defence = $faker->numberBetween(1, 20);
             $character->life = $faker->numberBetween(1, 100);
             $character->speed = $faker->numberBetween(1, 20);
-            $character->type_id = $types->random(1)->id;
+            $character->type_id = $types->random()->id;
             $character->save();
             $character->items()->sync($items->random(3));
         }
