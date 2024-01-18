@@ -22,15 +22,15 @@ class StoreCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|min:3|max:200',
-            'description'=>'nullable|min:3|max:1000',
-            'attack'=>'required|integer',
-            'defense'=>'required|integer',
-            'life'=>'required|integer',
-            'speed'=>'required|integer',
-            'image'=>'nullable|image',
-            'type_id'=>'exists:types,id',
-            'items'=>'exists:items,id'
+            'name' => 'required|min:3|max:200',
+            'description' => 'nullable|min:3|max:1000',
+            'attack' => 'required|integer',
+            'defence' => 'required|integer',
+            'life' => 'required|integer',
+            'speed' => 'required|integer',
+            'image' => 'nullable|image',
+            'type_id' => 'exists:types,id',
+            'items' => 'exists:items,id',
         ];
     }
 }
