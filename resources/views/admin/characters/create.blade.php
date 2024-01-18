@@ -57,23 +57,23 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                        <label for="item">Select Item</label>
-                        <select class="form-control @error('item_id') is-invalid @enderror" name="item_id" id="item_id">
-                            <option value="">Select a Item</option>
-                            @foreach ($items as $item)
-                                <option value="{{ $item->id }}" {{ old('item_id') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
+                        <label for="type">Select Type</label>
+                        <select class="form-control @error('item_id') is-invalid @enderror" name="type_id" id="type_id">
+                            <option value="">Select a Type</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
                             @endforeach
                         </select>
-                        @error('item_id')
+                        @error('type_id')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                 </div>
                 <div class="mb-3 text-white">
-                        @foreach ($types as $type)
-                            <input type="checkbox" class="mx-2 @error('type') is-invalid @enderror" name="type[]" id="type" value="{{ $type->id }}" {{ in_array($typetype->id, old('type', [])) ? 'checked' : '' }}>
-                            <label for="technologies">{{ $type->name }}</label>
+                        @foreach ($items as $item)
+                            <input type="checkbox" class="mx-2 @error('item') is-invalid @enderror" name="item[]" id="item" value="{{ $item->id }}" {{ in_array($item->id, old('item', [])) ? 'checked' : '' }}>
+                            <label for="item">{{ $item->name }}</label>
                         @endforeach
-                        @error('type')
+                        @error('item')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                 </div>
