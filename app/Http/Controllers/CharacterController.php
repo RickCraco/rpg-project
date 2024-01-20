@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCharacterRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 use App\Models\Item;
+use Illuminate\Support\Str;
 
 class CharacterController extends Controller
 {
@@ -37,8 +38,12 @@ class CharacterController extends Controller
     {
         $formdata = $request->validated();
 
+        $slug = Str::slug($formdata['name'], '-');
+
+        $formdata['slug'] = $slug;
+
         if($request->hasFile('image')) {
-            $path = Storage::put('images', $request->file('image'));
+            $path = Storage::put('images', $formdata['image']);
             $formdata['image'] = $path;
         }
 
@@ -76,18 +81,25 @@ class CharacterController extends Controller
     {
         $formdata = $request->validated();
 
+        $formdata['slug'] = $character->slug;
+
+        if ($character->name !== $formdata['name']) {
+            $slug = Character::getSlug($formdata['name']);
+            $formdata['slug'] = $slug;
+        }
+
         if($request->hasFile('image')) {
 
             if($character->image) {
                 Storage::delete($character->image);
             }
 
-            $path = Storage::put('images', $request->file('image'));
+            $path = Storage::put('images', $request->image);
             $formdata['image'] = $path;
         }
 
         //$character->fill($formdata);
-        $character->update();
+        $character->update($formdata);
 
         if($request->has('items')) {
             $character->items()->sync($request->items);
@@ -110,6 +122,6 @@ class CharacterController extends Controller
         $character->items()->detach();
 
         $character->delete();
-        return to_route('admin.characters.index')->with('message', 'Character deleted');
+        return to_route('admin.characters.index')->with('message', "$character->name deleted successfully");
     }
 }

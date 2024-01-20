@@ -11,7 +11,7 @@
             </ul>
         </div>
         @endif
-        <form action="{{route('admin.characters.update', $character->id)}}" enctype="multipart/form-data" method="POST" class="p-3">
+        <form action="{{route('admin.characters.update', $character)}}" enctype="multipart/form-data" method="POST" class="p-3">
             @csrf
             @method('PUT')
                 <input type="text" id="name" value="{{old('name', $character->name)}}" name="name" placeholder="Name" class="form-control my-2">
