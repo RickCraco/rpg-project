@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section style="background-size: cover; background-repeat: no-repeat;">
-        <div class="w-100 bg-dark h-100">
+    <section style="background-size: cover; background-repeat: no-repeat;" >
+        <div class="w-100 bg-dark vh-100" style="padding-top: 100px;">
             <h1 class="text-white text-center py-4">Items List</h1>
             <div class="d-flex justify-content-center pb-4">
                 <a href="{{ route('admin.items.create') }}" class="btn btn-primary fs-4">Add item</a>
@@ -38,6 +38,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $items->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
         </div>
