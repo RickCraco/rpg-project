@@ -12,4 +12,8 @@ class ItemController extends Controller
         $items = Item::all()->load('characters');
         return response()->json($items);
     }
+
+    public function show(Item $item){
+        return response()->json($item->load('characters'));
+    }
 }
