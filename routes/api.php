@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CharacterController;
+use App\Http\Controllers\Api\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/characters', [CharacterController::class, 'index']);
+Route::get('/items', [ItemController::class, 'index']);
