@@ -28,7 +28,7 @@
     <div id="app">
         @include('profile.partials.sidebar')
         @include('profile.partials.header')
-        <main class="" style="margin-top: 100px;">
+        <main>
             @yield('content')
         </main>
     </div>

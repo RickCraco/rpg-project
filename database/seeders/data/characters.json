@@ -1,0 +1,167 @@
+[
+    {
+        "name": "Draven Shadowhammer",
+        "description": "A brooding dwarf blacksmith with a mysterious past, known for crafting weapons of unparalleled quality.",
+        "attack": 8,
+        "defence": 15,
+        "life": 50,
+        "speed": 12,
+        "sex": "m",
+        "image": "public/storage/images/m-Barbarian.png",
+        "type_id": 1
+    },
+    {
+        "name": "Elara Moondust",
+        "description": "An elven druid with silver hair and a connection to the moon, devoted to preserving the balance of nature.",
+        "attack": 5,
+        "defence": 18,
+        "life": 24,
+        "speed": 14,
+        "sex": "f",
+        "image": "public/storage/images/f-Druid.png",
+        "type_id": 4
+    },
+    {
+        "name": "Thrain Stonebeard",
+        "description": "A grizzled and stout dwarven warrior with a love for tales of ancient battles and a penchant for wielding a massive warhammer.",
+        "attack": 11,
+        "defence": 2,
+        "life": 41,
+        "speed": 9,
+        "sex": "m",
+        "image": "public/storage/images/m-Fighter.png",
+        "type_id": 5
+    },
+    {
+        "name": "Isolde Stormazure",
+        "description": "A charismatic and adventurous sorceress, her lightning spells are as unpredictable as her personality.",
+        "attack": 10,
+        "defence": 4,
+        "life": 69,
+        "speed": 6,
+        "sex": "f",
+        "image": "public/storage/images/f-Sorcerer.png",
+        "type_id": 10
+    },
+    {
+        "name": "Zephyr Stormwing",
+        "description": "A roguish air genasi with windswept hair, skilled in stealth and archery, navigating both cities and wilderness with ease.",
+        "attack": 13,
+        "defence": 1,
+        "life": 73,
+        "speed": 8,
+        "sex": "m",
+        "image": "public/storage/images/m-Rogue.png",
+        "type_id": 9
+    },
+    {
+        "name": "Lyria Dragonheart",
+        "description": "A dragonborn paladin with scales as radiant as her noble spirit, sworn to protect the innocent and vanquish evil.",
+        "attack": 20,
+        "defence": 3,
+        "life": 81,
+        "speed": 5,
+        "sex": "f",
+        "image": "public/storage/images/f-Paladin.png",
+        "type_id": 7
+    },
+    {
+        "name": "Kael Firedawn",
+        "description": "A tiefling warlock with fiery horns and a devilish charm, whose powers stem from a pact made in the heart of a volcano.",
+        "attack": 7,
+        "defence": 14,
+        "life": 44,
+        "speed": 18,
+        "sex": "m",
+        "image": "public/storage/images/m-Warlock.png",
+        "type_id": 11
+    },
+    {
+        "name": "Seraphina Skyblue",
+        "description": "An aasimar cleric with celestial wings, healing the wounded and bringing hope to those in despair.",
+        "attack": 9,
+        "defence": 16,
+        "life": 65,
+        "speed": 4,
+        "sex": "f",
+        "image": "public/storage/images/f-Cleric.png",
+        "type_id": 3
+    },
+    {
+        "name": "Gideon Ironforge",
+        "description": "A stoic and disciplined human knight, skilled in swordplay and known for his unyielding loyalty to his allies.",
+        "attack": 6,
+        "defence": 13,
+        "life": 85,
+        "speed": 19,
+        "sex": "m",
+        "image": "public/storage/images/m-Paladin.png",
+        "type_id": 7
+    },
+    {
+        "name": "Evelina Bladebane",
+        "description": "A nimble and cunning halfling rogue, always one step ahead in both wit and skill, with a rapier as swift as her tongue.",
+        "attack": 15,
+        "defence": 8,
+        "life": 38,
+        "speed": 12,
+        "sex": "f",
+        "image": "public/storage/images/f-Rogue.png",
+        "type_id": 9
+    },
+    {
+        "name": "Ragnar Shadowfox",
+        "description": "A sly and cunning tiefling rogue with a talent for infiltration and a love for acquiring rare and valuable artifacts.",
+        "attack": 4,
+        "defence": 10,
+        "life": 40,
+        "speed": 7,
+        "sex": "m",
+        "image": "public/storage/images/m-Rogue.png",
+        "type_id": 9
+    },
+    {
+        "name": "Fiora Windwhisper",
+        "description": "A graceful and enigmatic elf bard, captivating audiences with haunting melodies and stories of ancient elven lore.",
+        "attack": 1,
+        "defence": 13,
+        "life": 53,
+        "speed": 16,
+        "sex": "f",
+        "image": "public/storage/images/f-Bard.png",
+        "type_id": 2
+    },
+    {
+        "name": "Zara Silvermoon",
+        "description": "An intelligent and strategic half-elf ranger, master of the bow, and adept at tracking foes through dense forests.",
+        "attack": 2,
+        "defence": 14,
+        "life": 42,
+        "speed": 11,
+        "sex": "f",
+        "image": "public/storage/images/f-Ranger.png",
+        "type_id": 8
+    },
+    {
+        "name": "Malachai Skullsword",
+        "description": "A fierce and battle-hardened half-orc barbarian, wielding a massive sword and known for his intimidating presence on the battlefield.",
+        "attack": 12,
+        "defence": 5,
+        "life": 80,
+        "speed": 3,
+        "sex": "m",
+        "image": "public/storage/images/m-Barbarian.png",
+        "type_id": 1
+    },
+    {
+        "name": "Elowen Starsea",
+        "description": "A wise and serene water genasi sorceress, with a deep connection to the ocean and the mysterious powers it holds.",
+        "attack": 16,
+        "defence": 9,
+        "life": 30,
+        "speed": 17,
+        "sex": "f",
+        "image": "public/storage/images/f-Sorcerer.png",
+        "type_id": 10
+    }
+]
