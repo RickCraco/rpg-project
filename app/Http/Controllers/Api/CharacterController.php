@@ -13,4 +13,8 @@ class CharacterController extends Controller
         return response()->json($characters);
     }
 
+    public function show(Character $character){
+        return response()->json($character->load(['type', 'items']));
+    }
+
 }
