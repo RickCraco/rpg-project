@@ -17,9 +17,9 @@
                             </ul>
 
                             <h4>Charaters with this Weapon</h4>
-                            @foreach ($item->characters as $items)
+                            @foreach ($item->characters as $character)
                                 <li><a class="text-dark text-decoration-none"
-                                        href="{{ route('admin.characters.show', $items->id) }}">{{ $items->name }}</a></li>
+                                        href="{{ route('admin.characters.show', $character) }}">{{ $character->name }}</a></li>
                             @endforeach
                         </div>
                     </div>
