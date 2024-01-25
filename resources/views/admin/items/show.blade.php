@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <main class="bg-dark">
+    <main class="bg-dark pt-120 vh-100">
         <section class="container py-4">
             <h1 class="text-white">{{ $item->name }}</h1>
             <div class="row gy-4">
