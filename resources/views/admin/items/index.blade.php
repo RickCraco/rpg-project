@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section style="background-size: cover; background-repeat: no-repeat;">
-        <div class="w-100 bg-dark h-100">
+    <section style="background-size: cover; background-repeat: no-repeat;" >
+        <div class="w-100 bg-dark vh-100" style="padding-top: 100px;">
             <h1 class="text-white text-center py-4">Items List</h1>
             <div class="d-flex justify-content-center pb-4">
                 <a href="{{ route('admin.items.create') }}" class="btn btn-primary fs-4">Add item</a>
@@ -22,13 +22,13 @@
                             @foreach ($items as $item)
                                 <tr>
                                     <td class="text-center">{{ $item->id }}</td>
-                                    <td class="text-center"><a class="text-decoration-none text-black" href="{{ route('admin.items.show', $item->id) }}">{{ $item->name }}</a></td>
+                                    <td class="text-center"><a class="text-decoration-none text-black" href="{{ route('admin.items.show', $item) }}">{{ $item->name }}</a></td>
                                     <td class="text-center">{{ $item->created_at }}</td>
                                     <td class="text-center">{{ $item->updated_at }}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('admin.items.edit', $item->id) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
-                                        <a href="{{ route('admin.items.show', $item->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
-                                        <form action="{{route('admin.items.destroy', $item->id)}}" method="POST" class="d-inline">
+                                        <a href="{{ route('admin.items.edit', $item) }}" class="btn btn-success"><i class="fa-solid fa-gear"></i></a>
+                                        <a href="{{ route('admin.items.show', $item) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                        <form action="{{route('admin.items.destroy', $item)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="cancel-button btn btn-danger" data-item-title="{{ $item->title }}"><i class="fa-solid fa-trash-can"></i></button>
@@ -38,6 +38,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $items->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
         </div>
