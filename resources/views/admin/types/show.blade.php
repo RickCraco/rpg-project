@@ -9,9 +9,9 @@
                         <div class="card-body">
                             <p class="card-text">{{ $type->description }}</p>
                             <h4>Charaters with this Type</h4>
-                            @foreach ($type->characters as $item)
+                            @foreach ($type->characters as $character)
                                 <li><a class="text-dark text-decoration-none"
-                                        href="{{ route('admin.characters.show', $item->id) }}">{{ $item->name }}</a></li>
+                                        href="{{ route('admin.characters.show', $character) }}">{{ $character->name }}</a></li>
                             @endforeach
                         </div>
                     </div>
