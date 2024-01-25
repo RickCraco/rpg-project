@@ -21,7 +21,7 @@
                                 <div class="mb-3">
                                     <h4>Type</h4>
                                     <a class="badge text-bg-primary"
-                                        href="{{ route('admin.types.show', $character->type->id) }}">{{ $character->type->name }}</a>
+                                        href="{{ route('admin.types.show', $character->type) }}">{{ $character->type->name }}</a>
                                 </div>
                             @endif
                             @if (count($character->items) > 0)
@@ -29,7 +29,7 @@
                                     <h4>Weapons</h4>
                                     @foreach ($character->items as $item)
                                         <a class="badge rounded-pill text-bg-success"
-                                            href="{{ route('admin.items.show', $item->id) }}">{{ $item->name }}</a>
+                                            href="{{ route('admin.items.show', $item) }}">{{ $item->name }}</a>
                                     @endforeach
 
                                 </div>
