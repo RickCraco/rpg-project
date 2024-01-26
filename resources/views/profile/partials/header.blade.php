@@ -3,12 +3,12 @@
         <div class="d-flex align-items-center gap-3">
             <a href="{{ route('home') }}"><img class="rounded-circle d-none d-md-flex" style="height: 90px; width: 90px;" src="{{ asset('storage/images/logo.png') }}" alt="logo"></a>
         </div>
-        <div>
+        {{-- <div>
             <form action="" class="d-flex gap-2">
                 <input class="form-control" style="width: 400px;" type="text" name="search" id="search" placeholder="Search">
                 <button class="btn btn-success">Search</button>
             </form>
-        </div>
+        </div> --}}
         <ul class="navbar-nav ml-auto d-flex justify-content-between flex-row gap-3">
             @guest
                 <li class="nav-item">
