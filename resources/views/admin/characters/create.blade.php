@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container mt-120">
+<div class="container" style="padding-top: 100px;">
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -14,35 +14,35 @@
         <form action="{{route('admin.characters.store')}}" enctype="multipart/form-data" method="POST" class="p-3">
             @csrf
                 <div class="mb-3">
-                    <label for="name">Name</label>
+                    <label for="name" class="text-white">Name</label>
                     <input type="text" id="name"  name="name" placeholder="Name" class="form-control my-2 @error('name') is-invalid @enderror" required>
                     @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="attack">Attack</label>
+                    <label for="attack" class="text-white">Attack</label>
                     <input type="text" id="attack" required  name="attack" placeholder="Attack" class="form-control my-2 @error('attack') is-invalid @enderror">
                     @error('attack')
                             <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                     <label for="description">Description</label>
+                     <label for="description" class="text-white">Description</label>
                      <input type="text" id="description" name="Description" placeholder="Description" class="form-control my-2 @error('description') is-invalid @enderror">
                   @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="defence">Defence</label>
+                    <label for="defence" class="text-white">Defense</label>
                     <input type="text" id="defence" required name="defence" placeholder="Defense" class="form-control my-2 @error('defence') is-invalid @enderror">
                      @error('defence')
                             <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="life">Life</label>
+                    <label for="life" class="text-white">Life</label>
                     <input type="text" id="life" name="life" required placeholder="HP" class="form-control my-2 @error('life') is-invalid @enderror">
                      @error('life')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -50,14 +50,14 @@
 
                 </div>
                 <div class="mb-3">
-                    <label for="speed">Speed</label>
+                    <label for="speed" class="text-white">Speed</label>
                     <input type="text" id="speed" name="speed" required  placeholder="Speed" class="form-control my-2  @error('speed') is-invalid @enderror">
                     @error('speed')
                             <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                        <label for="type">Select Type</label>
+                        <label for="type" class="text-white">Select Type</label>
                         <select class="form-control @error('item_id') is-invalid @enderror" name="type_id" id="type_id">
                             <option value="">Select a Type</option>
                             @foreach ($types as $type)
@@ -71,7 +71,7 @@
                 <div class="mb-3">
                         @foreach ($items as $item)
                             <input type="checkbox" class="mx-2 @error('item') is-invalid @enderror" name="item[]" id="item" value="{{ $item->id }}" {{ in_array($item->id, old('item', [])) ? 'checked' : '' }}>
-                            <label for="item">{{ $item->name }}</label>
+                            <label for="item" class="text-white">{{ $item->name }}</label>
                         @endforeach
                         @error('item')
                             <div class="invalid-feedback">{{ $message }}</div>
