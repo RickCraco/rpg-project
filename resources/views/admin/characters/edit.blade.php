@@ -35,16 +35,16 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <div class="form-group">
-                        <h6>Items:</h6>
+                    <h6>Items:</h6>
+                    <div class="form-group d-flex flex-wrap gap-3">
                         @foreach ($items as $item)
                             <div class="form-check @error('items') is-invalid @enderror">
                                 @if ($errors->any())
-                                    <input type="checkbox" class="form-check-input" name="items[]"
+                                    <input type="checkbox" class="  form-check-input" name="items[]"
                                         value="{{ $item->id }}"
                                         {{ in_array($item->id, old('items', $character->items)) ? 'checked' : '' }}>
                                 @else
-                                    <input type="checkbox" class="form-check-input" name="items[]"
+                                    <input type="checkbox" class="p-0 form-check-input" name="items[]"
                                         value="{{ $item->id }}"
                                         {{ $character->items->contains($item->id) ? 'checked' : '' }}>
                                 @endif
