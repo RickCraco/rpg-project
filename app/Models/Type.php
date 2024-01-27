@@ -15,6 +15,7 @@ class Type extends Model
         'slug',
         'image',
         'description',
+        'icon'
     ];
 
     public static function getSlug($name)

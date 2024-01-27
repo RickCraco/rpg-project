@@ -28,7 +28,7 @@
     <div id="app">
         @include('profile.partials.sidebar')
         @include('profile.partials.header')
-        <main>
+        <main class="bg-dark vh-100">
             @yield('content')
         </main>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="padding-top: 100px;">
     <h2 class="fs-4 text-danger my-4">
         {{ __('Dashboard') }}
     </h2>
