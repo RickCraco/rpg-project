@@ -25,6 +25,20 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+                <div>
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" class="form-control my-2 @error('image') is-invalid @enderror">
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div>
+                    <label for="icon">Icon</label>
+                    <input type="file" id="icon" name="icon" class="form-control my-2 @error('icon') is-invalid @enderror">
+                    @error('icon')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
                 <button type="submit" class="btn btn-primary">Save</button>
                 <button type="reset" class="btn btn-danger">Reset</button>
 
