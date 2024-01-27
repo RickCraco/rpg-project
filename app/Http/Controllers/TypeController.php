@@ -43,6 +43,11 @@ class TypeController extends Controller
             $formdata['image'] = $path;
         }
 
+        if($request->hasFile('icon')) {
+            $path = Storage::put('images', $formdata['icon']);
+            $formdata['icon'] = $path;
+        }
+
         $newType = Type::create($formdata);
         return to_route('admin.types.index');
     }
@@ -85,6 +90,16 @@ class TypeController extends Controller
 
             $path = Storage::put('images', $request->image);
             $formdata['image'] = $path;
+        }
+
+        if($request->hasFile('icon')) {
+
+            if($type->icon) {
+                Storage::delete($type->icon);
+            }
+
+            $path = Storage::put('images', $request->icon);
+            $formdata['icon'] = $path;
         }
 
         $type->update($formdata);
