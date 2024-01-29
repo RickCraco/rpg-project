@@ -21,7 +21,7 @@
                 <input type="text" id="life" name="life" value="{{old('life', $character->life)}}" placeholder="HP" class="form-control my-2">
                 <input type="text" id="speed" name="speed" value="{{old('speed', $character->speed)}}" placeholder="Speed" class="form-control my-2">
                 <div class="mb-3">
-                    <label for="type_id">Select Type</label>
+                    <label for="type_id" class="text-white">Select Type</label>
                     <select class="form-control @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
                         <option value="">Select a type</option>
                         @foreach ($types as $type)
@@ -35,7 +35,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <h6>Items:</h6>
+                    <h6 class="text-white">Items:</h6>
                     <div class="form-group d-flex flex-wrap gap-3">
                         @foreach ($items as $item)
                             <div class="form-check @error('items') is-invalid @enderror">
@@ -48,7 +48,7 @@
                                         value="{{ $item->id }}"
                                         {{ $character->items->contains($item->id) ? 'checked' : '' }}>
                                 @endif
-                                <label class="form-check-label">
+                                <label class="form-check-label text-white">
                                     {{ $item->name }}
                                 </label>
                             </div>
