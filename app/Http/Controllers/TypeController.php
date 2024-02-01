@@ -6,6 +6,7 @@ use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class TypeController extends Controller
 {
@@ -36,6 +37,16 @@ class TypeController extends Controller
         $slug = Str::slug($formdata['name'], '-');
 
         $formdata['slug'] = $slug;
+
+        if($request->hasFile('image')) {
+            $path = Storage::put('images', $formdata['image']);
+            $formdata['image'] = $path;
+        }
+
+        if($request->hasFile('icon')) {
+            $path = Storage::put('images', $formdata['icon']);
+            $formdata['icon'] = $path;
+        }
 
         $newType = Type::create($formdata);
         return to_route('admin.types.index');
@@ -69,6 +80,26 @@ class TypeController extends Controller
         if ($type->name !== $formdata['name']) {
             $slug = Type::getSlug($formdata['name']);
             $formdata['slug'] = $slug;
+        }
+
+        if($request->hasFile('image')) {
+
+            if($type->image) {
+                Storage::delete($type->image);
+            }
+
+            $path = Storage::put('images', $request->image);
+            $formdata['image'] = $path;
+        }
+
+        if($request->hasFile('icon')) {
+
+            if($type->icon) {
+                Storage::delete($type->icon);
+            }
+
+            $path = Storage::put('images', $request->icon);
+            $formdata['icon'] = $path;
         }
 
         $type->update($formdata);

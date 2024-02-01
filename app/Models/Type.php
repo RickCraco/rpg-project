@@ -12,7 +12,10 @@ class Type extends Model
 
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'image',
+        'description',
+        'icon'
     ];
 
     public static function getSlug($name)
